@@ -1,5 +1,9 @@
 # Swift-podcastindex-org-example
 
+Swift example for https://podcastindex.org
+
+this is original source code written by me (CSB)
+
 how to use:
 
 run index-podcasting.swift in Xcode for mac or in Swift Playgrounds for iPad or for mac
