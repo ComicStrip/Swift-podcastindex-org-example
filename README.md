@@ -12,4 +12,4 @@ if you need support regarding this example, you want to give feedback or you hav
 
 note: to see output in Xcode's Swift Playgrounds for macOS please click on the icon as pictured here:
 
-<img width="964" alt="podcastingindex.org example in Swift" src="https://raw.githubusercontent.com/ComicStrip/Swift-podcastindex-org-example/main/swift-playground.png">
+<img alt="podcastingindex.org example in Swift" src="https://raw.githubusercontent.com/ComicStrip/Swift-podcastindex-org-example/main/swift-playground.png">
