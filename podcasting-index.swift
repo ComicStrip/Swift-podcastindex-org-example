@@ -15,4 +15,23 @@ let inputData = Data(data4Hash.utf8)
 let hashed = Insecure.SHA1.hash(data: inputData)
 let hashString = hashed.compactMap { String(format: "%02x", $0) }.joined()
 // ======== Send the request and collect/show the results ======== 
-// TODO
+let query = "bastiat"
+let url = "https://api.podcastindex.org/api/1.0/search/byterm?q="+query
+var request = URLRequest(url: URL(string:url)!)
+request.httpMethod = "GET"
+request.addValue( "\(apiHeaderTime)", forHTTPHeaderField: "X-Auth-Date")
+request.addValue( apiKey, forHTTPHeaderField: "X-Auth-Key")
+request.addValue( hashString, forHTTPHeaderField: "Authorization")
+request.addValue( "SuperPodcastPlayer/1.8", forHTTPHeaderField: "User-Agent")
+let session = URLSession.shared
+let task = session.dataTask(with: request, completionHandler: { data, response, error -> Void in
+    print(response!)
+    do {
+        let json = try JSONSerialization.jsonObject(with: data!) as! Dictionary<String, AnyObject>
+        print(json)
+    } catch {
+        print("error")
+    }
+})
+task.resume()
+
